@@ -15,10 +15,12 @@ describe("babel-plugin-iife-unwrap", () => {
     const result = transform("(function(){var a = 1})()");
     expect(result).toMatchInlineSnapshot(`var a = 1;`);
   });
+
   test("iife unary expression", () => {
     const result = transform("!function(){var a = 1}()");
     expect(result).toMatchInlineSnapshot(`var a = 1;`);
   });
+
   test("iife arrow function", () => {
     const result = transform("(() => {var a = 1})()");
     expect(result).toMatchInlineSnapshot(`var a = 1;`);
